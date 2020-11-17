@@ -10,3 +10,5 @@ led.on()
 
 bd.wait_for_release()
 led.off()
+
+pause()
