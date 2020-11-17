@@ -1,14 +1,13 @@
-import os
+#!/usr/bin/env python3
+
 from bluedot import BlueDot
 from gpiozero import LED
+from signal import pause
 
 bd = BlueDot()
 led = LED(17)
 
-bd.wait_for_press()
-led.on()
-
-bd.wait_for_release()
-led.off()
+bd.when_pressed = led.on
+bd.when_released = led.off
 
 pause()
