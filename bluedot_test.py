@@ -1,5 +1,12 @@
+import os
 from bluedot import BlueDot
+from gpiozero import LED
 
 bd = BlueDot()
+led = LED(17)
+
 bd.wait_for_press()
-print("You pressed the blue dot!")
+led.on()
+
+bd.wait_for_release()
+led.off()
